@@ -30,7 +30,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue.shade100,
+      backgroundColor: Colors.grey.shade900,
       body: Center(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -52,9 +52,7 @@ class _SplashScreenState extends State<SplashScreen> {
             DelayedDisplay(
               delay: const Duration(seconds: 2),
               child: Text("Manage your daily Activities with us.",
-                  style: GoogleFonts.acme(
-                    fontSize: 22,
-                  )),
+                  style: GoogleFonts.acme(fontSize: 22, color: Colors.white)),
             ),
             const SizedBox(height: 250),
             DelayedDisplay(
