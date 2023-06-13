@@ -76,19 +76,23 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue[200],
+      backgroundColor: Colors.grey.shade900,
       appBar: AppBar(
-        title: Center(
+        title: Padding(
+          padding: const EdgeInsets.only(left: 10),
           child: Text(
-            'TO DO APP',
+            'TODO',
             style: GoogleFonts.acme(
-              fontSize: 25,
+              fontSize: 30,
               fontWeight: FontWeight.bold,
+              color: Colors.white,
+              letterSpacing: 2,
             ),
-            textAlign: TextAlign.center,
+            textAlign: TextAlign.start,
           ),
         ),
         elevation: 0,
+        backgroundColor: Colors.grey.shade900,
       ),
       floatingActionButton: FloatingActionButton(
           onPressed: createNewTask, child: Icon(Icons.add)),
