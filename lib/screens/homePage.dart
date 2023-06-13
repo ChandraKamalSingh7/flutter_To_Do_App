@@ -96,16 +96,41 @@ class _HomePageState extends State<HomePage> {
       ),
       floatingActionButton: FloatingActionButton(
           onPressed: createNewTask, child: Icon(Icons.add)),
-      body: ListView.builder(
-        itemCount: db.toDoList.length,
-        itemBuilder: (context, index) {
-          return ToDoTile(
-            taskName: db.toDoList[index][0],
-            taskCompleted: db.toDoList[index][1],
-            onChanged: (value) => checkBoxChanged(value, index),
-            deleteFunction: (context) => deleteTask(index),
-          );
-        },
+      body: Padding(
+        padding: const EdgeInsets.fromLTRB(16, 10, 16, 0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(left: 12),
+              child: Text(
+                "Your Todo list...",
+                style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.w500,
+                    color: Colors.white),
+                textAlign: TextAlign.start,
+              ),
+            ),
+            const SizedBox(
+              height: 5,
+            ),
+            Expanded(
+              child: ListView.builder(
+                itemCount: db.toDoList.length,
+                itemBuilder: (context, index) {
+                  return ToDoTile(
+                    taskName: db.toDoList[index][0],
+                    taskCompleted: db.toDoList[index][1],
+                    onChanged: (value) => checkBoxChanged(value, index),
+                    deleteFunction: (context) => deleteTask(index),
+                  );
+                },
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

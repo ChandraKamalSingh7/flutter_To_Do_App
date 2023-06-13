@@ -54,7 +54,7 @@ class _SplashScreenState extends State<SplashScreen> {
               child: Text("Manage your daily Activities with us.",
                   style: GoogleFonts.acme(fontSize: 22, color: Colors.white)),
             ),
-            const SizedBox(height: 250),
+            const SizedBox(height: 150),
             DelayedDisplay(
               delay: const Duration(seconds: 4),
               child: LoadingAnimationWidget.staggeredDotsWave(
